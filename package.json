@@ -10,7 +10,8 @@
     "homo": "set NODE_ENV=HOMOLOGACION && npm run start",
     "homo:linux": "export NODE_ENV=HOMOLOGACION && npm run start",
     "start:nodemon": "nodemon src/index.ts --exec ts-node",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/index.js",
+    "test": "mocha -r ts-node/register tests/**/*.test.ts"
   },
   "keywords": [],
   "author": "",

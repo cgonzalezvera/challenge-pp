@@ -5,13 +5,14 @@ import morgan from 'morgan'
 import fondosRoutes from './routes/fondos.routes';
 import indexRoute from './routes/index.routes'
 import location from './routes/location.routes'
+import test from './routes/test.routes'
 
 import { logInfo, logError } from './logger';
 
 
 
 export class WebApiConfig {
-    app: Application;
+    public app: Application;
 
     constructor(
         private port?: number | string,
@@ -43,6 +44,7 @@ export class WebApiConfig {
         this.app.use("/", indexRoute)
         this.app.use(fondosRoutes);
         this.app.use(location);
+        this.app.use(test);
     }
 
     public async listen(): Promise<void> {
