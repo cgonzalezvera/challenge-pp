@@ -1,8 +1,4 @@
 import { Request, Response } from 'express'
-import { SolicitudMovimientoFondos } from '../models/solicitudMovimientoFondos'
-import axios, { AxiosRequestConfig } from 'axios'
-import { ENVCONFIG } from '../config'
-import { logInfo, logError } from '../logger';
 import getIpLocation from '../services/external/apiLocation.service'
 import { createLocationFrom } from '../models/responseIpApiModel';
 

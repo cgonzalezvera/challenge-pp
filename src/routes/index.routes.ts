@@ -14,10 +14,11 @@ router.route('/v1')
     .get((req: Request, res: Response) => {
 
         res.json({
-            status: "ok",
-            appName: appName,
-            lastRefresh: new Date().toLocaleString(),
-            enviroment: ENVCONFIG.NODE_ENV || "unspecified"
+            estado: "ok",
+            app: appName,
+            fechaHora_request: new Date().toLocaleString(),
+            entorno: ENVCONFIG.NODE_ENV || "unspecified",
+            autor: "Ing. Claudio Enrique González Vera"
         });
     });
 

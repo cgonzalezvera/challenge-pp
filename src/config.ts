@@ -26,15 +26,6 @@ export const ENVCONFIG = {
     HOST: process.env.HOST || '127.0.0.1',
     PORT: process.env.PORT || DEFAULT_PORT,
     LOGLEVEL: process.env.LOGLEVEL || 'ERROR',
-
-    IS_URL: process.env.IS_URL || '',
-    IS_CLIENT_ID: process.env.IS_CLIENT_ID || '',
-    IS_CLIENT_SECRET: process.env.IS_CLIENT_SECRET || '',
-    IS_GRANT_TYPE: process.env.IS_GRANT_TYPE || '',
-    IS_SCOPE: process.env.IS_SCOPE || '',
-    CI_BASE_URL: process.env.CI_BASE_URL || '',
-    CO_BASE_URL: process.env.CO_BASE_URL || '',
-
     URL_IP_API_SERVICE: process.env.URL_IP_API_SERVICE || URL_IP_API,
     API_KEY_OPEN_WEATHER_SERVICE: process.env.API_KEY_OPEN_WEATHER_SERVICE || API_KEY_OPEN_WEATHER_SERVICE
 }
