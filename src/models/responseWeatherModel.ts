@@ -58,14 +58,14 @@ function unixDateTimeToLocalDate(unixDateTime: number): string {
     return new Date(unixDateTime * 1000).toLocaleDateString();
 }
 
-export function fromForecastDayApitoResponseItemModel(forecastItemDay: any): DayForecastItemModel {
+export function fromForecastDayApiToResponseItemModel(forecastItemDay: any): DayForecastItemModel {
     return {
         fecha_dia: unixDateTimeToLocalDate(forecastItemDay.dt),
         clima: forecastItemDay.weather[0].description,
         humedad: `${forecastItemDay.humidity}%`,
-        nubocidad: forecastItemDay.weather[0].main,
-        puestaDelSol: unixDateTimeToLocalDateTime(forecastItemDay.sunrise),
-        salidaDelsol: unixDateTimeToLocalDateTime(forecastItemDay.sunset),
+        nubocidad: `${forecastItemDay.clouds}%`,
+        puestaDelSol: unixDateTimeToLocalDateTime(forecastItemDay.sunset),
+        salidaDelsol: unixDateTimeToLocalDateTime(forecastItemDay.sunrise),
         temparatura: {
             dia: forecastItemDay.temp.day,
             min: forecastItemDay.temp.min,
