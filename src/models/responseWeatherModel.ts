@@ -1,5 +1,8 @@
 import _ from "lodash";
 
+function unixTimestampToLocalDate(unixDateTime: number, fmt: (dt: Date) => string): string {
+    return fmt(new Date(unixDateTime * 1000));
+}
 export interface ResponseCurrentWeatherModel {
     descripcion: string;
     temperatura: number;
@@ -36,11 +39,8 @@ export interface DayForecastItemModel {
 
 
 export interface ResponseForecastDaysModel {
-
-
     nombre_ubicacion: string;
     pronosticos: DayForecastItemModel[];
-
 }
 
 
@@ -52,9 +52,7 @@ export function isWeatherApiErrorResponse(obj: any): boolean {
 }
 
 
-function unixTimestampToLocalDate(unixDateTime: number, fmt: (dt: Date) => string): string {
-    return fmt(new Date(unixDateTime * 1000));
-}
+
 
 export function fromForecastDayApiToResponseItemModel(forecastItemDay: any): DayForecastItemModel {
     return {
