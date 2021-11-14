@@ -1,4 +1,7 @@
-# Cómo ejecutar la aplicacion para trabajar a nivel local.
+# Observaciones importantes
+
+
+## Cómo ejecutar la aplicacion para trabajar a nivel local.
 
 1. ubicarse en el directorio de la app.
 2. ejecutar en la linea de comando: npm install
