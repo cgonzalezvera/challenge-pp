@@ -45,7 +45,7 @@ export interface ResponseForecastDaysModel {
 
 
 
-export function isWeatherGenericModel(obj: any): boolean {
+export function isWeatherApiErrorResponse(obj: any): boolean {
     const keys = _.keysIn(obj);
 
     return keys.length == 2 && keys.includes('cod') && keys.includes('message');

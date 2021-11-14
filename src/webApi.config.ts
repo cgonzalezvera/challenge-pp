@@ -5,7 +5,6 @@ import indexRoute from './routes/index.routes'
 import location from './routes/location.routes'
 import forecast from './routes/forecast.routes'
 import current from './routes/current.routes';
-import test from './routes/test.routes'
 import { logInfo } from './logger';
 
 
@@ -44,7 +43,6 @@ export class WebApiConfig {
         this.app.use(location);
         this.app.use(current);
         this.app.use(forecast);
-        this.app.use(test);
     }
 
     public async listen(): Promise<void> {

@@ -12,5 +12,4 @@ export async function getCurrentLocation(req: Request): Promise<{ cityName: stri
 
     return { cityName: currentLocation.city, errorMessage: null };
 
-
 }

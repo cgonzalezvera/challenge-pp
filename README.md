@@ -1,5 +1,9 @@
 # Observaciones importantes
-
+ - use typescript para soportar mantenibilidad y fomentar la legibilidad que es necesario para el trabajo en equipo.
+ - la estructura es simple: controladores, rutas, modelos y servicios.
+ - le falta afinar más los tests para que sean completamente unidades ailsadas. Por ejemplo usar alguna libreria de mockeo para los request (nock por ejemplo)
+  - se busco que cada modulo tenga las minimas resposabilidades en aras a fomentar alta cohesion.
+  
 
 ## Cómo ejecutar la aplicacion para trabajar a nivel local.
 

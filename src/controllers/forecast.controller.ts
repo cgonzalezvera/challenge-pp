@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { fromForecastDayApiToResponseItemModel, isWeatherGenericModel, ResponseForecastDaysModel } from '../models/responseWeatherModel';
+import { fromForecastDayApiToResponseItemModel, isWeatherApiErrorResponse, ResponseForecastDaysModel } from '../models/responseWeatherModel';
 import getForecastByCityName from '../services/external/apiForecast.service';
 import { getCurrentLocation } from '../services/helpers/helperLocation.service';
 
@@ -14,7 +14,7 @@ export async function forecast(req: Request, res: Response) {
   }
   const foreCastDto = await getForecastByCityName(location.cityName);
 
-  if (isWeatherGenericModel(foreCastDto)) {
+  if (isWeatherApiErrorResponse(foreCastDto)) {
     res.status(foreCastDto.cod).json("Error determinando la ubicación.");
 
     return;
