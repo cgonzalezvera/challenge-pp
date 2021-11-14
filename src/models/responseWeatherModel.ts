@@ -51,21 +51,19 @@ export function isWeatherApiErrorResponse(obj: any): boolean {
     return keys.length == 2 && keys.includes('cod') && keys.includes('message');
 }
 
-function unixDateTimeToLocalDateTime(unixDateTime: number): string {
-    return new Date(unixDateTime * 1000).toLocaleString();
-}
-function unixDateTimeToLocalDate(unixDateTime: number): string {
-    return new Date(unixDateTime * 1000).toLocaleDateString();
+
+function unixTimestampToLocalDate(unixDateTime: number, fmt: (dt: Date) => string): string {
+    return fmt(new Date(unixDateTime * 1000));
 }
 
 export function fromForecastDayApiToResponseItemModel(forecastItemDay: any): DayForecastItemModel {
     return {
-        fecha_dia: unixDateTimeToLocalDate(forecastItemDay.dt),
+        fecha_dia: unixTimestampToLocalDate(forecastItemDay.dt, dt => dt.toLocaleDateString()),
         clima: forecastItemDay.weather[0].description,
         humedad: `${forecastItemDay.humidity}%`,
         nubocidad: `${forecastItemDay.clouds}%`,
-        puestaDelSol: unixDateTimeToLocalDateTime(forecastItemDay.sunset),
-        salidaDelsol: unixDateTimeToLocalDateTime(forecastItemDay.sunrise),
+        puestaDelSol: unixTimestampToLocalDate(forecastItemDay.sunset, dt => dt.toLocaleString()),
+        salidaDelsol: unixTimestampToLocalDate(forecastItemDay.sunrise, dt => dt.toLocaleString()),
         temparatura: {
             dia: forecastItemDay.temp.day,
             min: forecastItemDay.temp.min,
@@ -94,8 +92,8 @@ export function fromWeatherApiToResponseCurrentWeatherModel(weatherApi: any): Re
         humedad: `${weatherApi.main.humidity}%`,
         nombre_ubicacion: weatherApi.name,
         nubocidad: `${weatherApi.clouds.all}%`,
-        salidaDelsol: unixDateTimeToLocalDateTime(weatherApi.sys.sunrise),
-        puestaDelSol: unixDateTimeToLocalDateTime(weatherApi.sys.sunset),
+        salidaDelsol: unixTimestampToLocalDate(weatherApi.sys.sunrise, dt => dt.toLocaleString()),
+        puestaDelSol: unixTimestampToLocalDate(weatherApi.sys.sunset, dt => dt.toLocaleString()),
 
     };
 }
