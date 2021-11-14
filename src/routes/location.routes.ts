@@ -6,5 +6,4 @@ const router = Router();
 router.route('/v1/location')
     .get(location);
 
-
 export default router;

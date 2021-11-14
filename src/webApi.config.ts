@@ -1,13 +1,13 @@
 
 import express, { Application } from 'express'
 import morgan from 'morgan'
-
 import fondosRoutes from './routes/fondos.routes';
 import indexRoute from './routes/index.routes'
 import location from './routes/location.routes'
+import forecast from './routes/forecast.routes'
+import current from './routes/current.routes';
 import test from './routes/test.routes'
-
-import { logInfo, logError } from './logger';
+import { logInfo } from './logger';
 
 
 
@@ -44,6 +44,8 @@ export class WebApiConfig {
         this.app.use("/", indexRoute)
         this.app.use(fondosRoutes);
         this.app.use(location);
+        this.app.use(current);
+        this.app.use(forecast);
         this.app.use(test);
     }
 

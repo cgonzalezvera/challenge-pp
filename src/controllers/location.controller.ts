@@ -4,13 +4,13 @@ import axios, { AxiosRequestConfig } from 'axios'
 import { ENVCONFIG } from '../config'
 import { logInfo, logError } from '../logger';
 import getIpLocation from '../services/external/apiLocation.service'
-import { mapToLocation } from '../models/responseIpApiModel';
+import { createLocationFrom } from '../models/responseIpApiModel';
 
 export async function location(req: Request, res: Response) {
 
 
     const dto = await getIpLocation();
-    const location = mapToLocation(dto);
+    const location = createLocationFrom(dto);
 
     if (!location.estadoRespuesta) {
         res.status(500).json(location);

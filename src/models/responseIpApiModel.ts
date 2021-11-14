@@ -27,28 +27,30 @@ export interface LocationResponseModel {
 
 
 
-export function mapToLocation(model: IpApiDtoModel): LocationResponseModel {
+export function createLocationFrom(model: IpApiDtoModel): LocationResponseModel {
 
-    if (model.status === 'success') {
+    if (!model || model.status !== 'success') {
         return {
-            pais: model.country,
-            provincia: model.regionName,
-            ciudad: model.city,
-            latitud: model.lat,
-            longitud: model.lon,
-            ipRequest: model.query,
-            estadoRespuesta: true
+            pais: null,
+            provincia: null,
+            ciudad: null,
+            latitud: null,
+            longitud: null,
+            ipRequest: null,
+            estadoRespuesta: false
         }
+
     }
 
     return {
-        pais: null,
-        provincia: null,
-        ciudad: null,
-        latitud: null,
-        longitud: null,
-        ipRequest: null,
-        estadoRespuesta: false
+        pais: model.country,
+        provincia: model.regionName,
+        ciudad: model.city,
+        latitud: model.lat,
+        longitud: model.lon,
+        ipRequest: model.query,
+        estadoRespuesta: true
     }
+
 
 }
