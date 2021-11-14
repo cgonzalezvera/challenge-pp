@@ -10,20 +10,12 @@ const apiKey = ENVCONFIG.API_KEY_OPEN_WEATHER_SERVICE;
 function createUrlRequest(urlWeatherServiceBase: string, apiKey: string, cityValueParam: string): string {
     return `${urlWeatherServiceBase}?q=${encodeURI(cityValueParam)}&lang=es&units=metric&appid=${apiKey}`;
 }
-async function getWeatherByCityName(cityName: string | null): Promise<any> {
+async function getWeatherByCityName(cityName: string): Promise<any> {
 
-    let cityValueParam = cityName || '';
-    if (!cityName) {
-        const currentLocation = await getIpLocation();
-        if (!currentLocation || !currentLocation.city) {
-            return null;
-        }
-        cityValueParam = currentLocation.city || '';
-    }
 
     const config: AxiosRequestConfig = {
         method: 'get',
-        url: createUrlRequest(urlWeatherServiceBase, apiKey, cityValueParam)
+        url: createUrlRequest(urlWeatherServiceBase, apiKey, cityName)
     }
 
     const response = await axios(config)

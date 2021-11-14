@@ -1,15 +1,21 @@
 import { Request, Response } from 'express'
 import getWeatherByCityName from '../services/external/apiWeather.service';
 import { fromWeatherApiToResponseCurrentWeatherModel, isWeatherGenericModel } from '../models/responseWeatherModel';
+import { getCurrentLocation } from '../services/helpers/helperLocation.service';
 
 
 export async function current(req: Request, res: Response) {
 
-  const cityParam = req.params.city;
 
-  const weatherDto = await getWeatherByCityName(cityParam);
+
+  const location = await getCurrentLocation(req);
+
+  if (location.errorMessage) {
+    res.status(500).json(location.errorMessage);
+    return;
+  }
+  const weatherDto = await getWeatherByCityName(location.cityName);
   if (isWeatherGenericModel(weatherDto)) {
-    console.log("error de localización");
     res.status(weatherDto.cod).json("Error determinando la ubicación.");
 
     return;
