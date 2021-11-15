@@ -1,6 +1,7 @@
 # Challenge PersonalPay
 
 ## Autor: Ing. Claudio Gonzalez Vera
+## email: cgonzalezvera@gmail.com
 
 ## Objetivos:
 - Mantenibilidad: por eso elegi typescript como tool para ayudar a la legibilidad del codigo. Un codigo legibles suaviza el trabajo en equipo ya que los demas podran comprender un poco mejor el codigo.
