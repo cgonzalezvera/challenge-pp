@@ -25,4 +25,4 @@
 - (*) Obtener clima ubicación parametrizada como path (city): http://localhost:9000/v1/current/{city}
 - (*) Obtener pronóstico a cinco dias en la ubicación parametrizada como path (city): http://localhost:9000/v1/forecast/{city}
 
-(*) Si no se indica cómo parámetro el nombre de una ciudad, se tomara como valor para el parametro la ubicacion actual a partir de la IP.
+(*) Si no se indica como parámetro el nombre de una ciudad, se tomara como valor la ubicacion actual a partir de la IP.
