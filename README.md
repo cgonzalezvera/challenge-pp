@@ -17,3 +17,9 @@
 
 ## Cómo ejecutar tests
 - npm run test
+
+## Endpoints
+- Si ejecutamos la app. en local esta escucha en http://localhost:9000/v1
+- ubicacion actual: http://localhost:9000/v1/location
+- clima ubicacion parametrizada como path (city). Si no se indica se toma la ubicacion actual: http://localhost:9000/v1/current/{city}
+- pronostico a cinco dias en la ubicacion parametrizada como path (city). Si no se indica se toma la ubicacion actual: http://localhost:9000/v1/forecast/{city}
