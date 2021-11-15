@@ -1,34 +1,19 @@
-# Observaciones importantes
- - use typescript para soportar mantenibilidad y fomentar la legibilidad que es necesario para el trabajo en equipo.
- - la estructura es simple: controladores, rutas, modelos y servicios.
- - le falta afinar más los tests para que sean completamente unidades ailsadas. Por ejemplo usar alguna libreria de mockeo para los request (nock por ejemplo)
-  - se busco que cada modulo tenga las minimas resposabilidades en aras a fomentar alta cohesion.
-  
+# Challenge PersonalPay
 
-## Cómo ejecutar la aplicacion para trabajar a nivel local.
+## Autor: Ing. Claudio Gonzalez Vera
 
-1. ubicarse en el directorio de la app.
-2. ejecutar en la linea de comando: npm install
-3. ejecutar desde la linea de comando: npm run dev
+## Objetivos:
+- Mantenibilidad:por eso elegi typescript como tool para ayudar a la legibilidad del codigo.
+- Alta cohesion y simple responsabilidad:las funciones y modulos en gran parte hacen unas cuantas cosas. 
+- Modularidad:siguiendo el principo anterior, se hizo una division entre controladores, rutas y servicios.
+- Testeable:se hicieron test de ciertos casos de uso de los endpoints.
 
-- **Observación 1**: El paso 2 se debe ejecutar cada vez que un git pull trajo nuevos cambios o se baja por primera vez.
-- **Observación 2**: para restaurar las versiones exactas de paquetes segun package-lock.json, ejecutamos npm ci
-- **Observación 3**: Si la ejecucion de npm run dev arroja algun error, instalar ts-node globalmente (npm install -g ts-node) y luego ejecutar paso (3).
+## Aspectos por mejorar
+- cubrir con más unit-tests diferentes casos de uso.
+- usando alguna liberia mockear los request http.
 
-## Consideraciones para docker
+## Cómo ejecutar app
+- npm run dev
 
-1. Construir imagen basada en Dockerfile: docker build -t \<nombre que quieren dar a la imagen\> .
-2. Crear y ejecutar un contenedor basado en la imagen buildeada en paso anterior: docker run -it -p puerto_host:puerto_container \<nombre de la imagen\>
-
-## problemas para ejecutar scripts de package.json cross-platform
-
-Considerar estos links:
-
-- https://docgov.dev/posts/npm-scripts/
-- https://www.npmjs.com/package/run-script-os
-- https://www.npmjs.com/package/cross-env
-
----
-
-## Flujo del request
-
+## Cómo ejecutar tests
+- npm run test
