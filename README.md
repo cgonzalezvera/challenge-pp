@@ -10,7 +10,7 @@
 
 ## Aspectos por mejorar
 - cubrir con más unit-tests diferentes casos de uso.
-- usando alguna liberia mockear los request http.
+- crear mocks http request empleando alguna libreria. Por ejemplo nock.js
 
 ## Cómo ejecutar app
 - npm run dev
@@ -22,5 +22,7 @@
 
 - Si ejecutamos la app. localmente, esta escucha en: http://localhost:9000/v1
 - Obtener ubicación actual: http://localhost:9000/v1/location
-- Obtener clima ubicación parametrizada como path (city). Si no se indica se toma la ubicacion actual: http://localhost:9000/v1/current/{city}
-- Obtener pronóstico a cinco dias en la ubicación parametrizada como path (city). Si no se indica se toma la ubicacion actual: http://localhost:9000/v1/forecast/{city}
+- (*) Obtener clima ubicación parametrizada como path (city): http://localhost:9000/v1/current/{city}
+- (*) Obtener pronóstico a cinco dias en la ubicación parametrizada como path (city): http://localhost:9000/v1/forecast/{city}
+
+(*) Si no se indica cómo parámetro el nombre de una ciudad, se tomara como valor para el parametro la ubicacion actual a partir de la IP.
