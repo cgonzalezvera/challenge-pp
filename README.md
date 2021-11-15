@@ -13,6 +13,9 @@
 - cubrir con más unit-tests diferentes casos de uso.
 - crear mocks http request empleando alguna libreria. Por ejemplo nock.js
 
+## Cómo instalar paquetes
+- npm ci
+
 ## Cómo ejecutar app
 - npm run dev
 
