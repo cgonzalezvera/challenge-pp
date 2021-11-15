@@ -3,10 +3,10 @@
 ## Autor: Ing. Claudio Gonzalez Vera
 
 ## Objetivos:
-- Mantenibilidad:por eso elegi typescript como tool para ayudar a la legibilidad del codigo.
-- Alta cohesion y simple responsabilidad:las funciones y modulos en gran parte hacen unas cuantas cosas. 
-- Modularidad:siguiendo el principo anterior, se hizo una division entre controladores, rutas y servicios.
-- Testeable:se hicieron test de ciertos casos de uso de los endpoints.
+- Mantenibilidad: por eso elegi typescript como tool para ayudar a la legibilidad del codigo. Un codigo legibles suaviza el trabajo en equipo ya que los demas podran comprender un poco mejor el codigo.
+- Alta cohesion y simple responsabilidad:las funciones y modulos creados tienen pocas responsabilidades en general. 
+- Modularidad: siguiendo el principo anterior, se hizo una division entre controladores, rutas y servicios. 
+- Testeable: se hicieron test de ciertos casos de uso de los endpoints.
 
 ## Aspectos por mejorar
 - cubrir con más unit-tests diferentes casos de uso.
