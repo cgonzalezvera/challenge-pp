@@ -4,7 +4,7 @@
 ## email: cgonzalezvera@gmail.com
 
 ## Objetivos:
-- Mantenibilidad: por eso elegi typescript como tool para ayudar a la legibilidad del codigo. Un codigo legible suaviza el trabajo en equipo ya que los demas podran comprenderlo mejor.
+- Mantenibilidad: por eso elegi typescript como tool para ayudar a la legibilidad del codigo. Un codigo legible suaviza el trabajo en equipo pues aumentará la probalidad de comprenderlo mejor.
 - Alta cohesion y simple responsabilidad:las funciones y modulos creados tienen pocas responsabilidades en general. 
 - Modularidad: siguiendo el principo anterior, se hizo una division entre controladores, rutas y servicios. 
 - Testeable: se hicieron test de ciertos casos de uso de los endpoints.
