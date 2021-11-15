@@ -20,7 +20,7 @@
 
 ## Endpoints
 
-- Si ejecutamos la app. en local esta escucha en http://localhost:9000/v1
+- Si ejecutamos la app. localmente, esta escucha en: http://localhost:9000/v1
 - Obtener ubicación actual: http://localhost:9000/v1/location
 - Obtener clima ubicación parametrizada como path (city). Si no se indica se toma la ubicacion actual: http://localhost:9000/v1/current/{city}
 - Obtener pronóstico a cinco dias en la ubicación parametrizada como path (city). Si no se indica se toma la ubicacion actual: http://localhost:9000/v1/forecast/{city}
